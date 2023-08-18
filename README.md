@@ -6,7 +6,8 @@ A custom backend with a router I made for creating websites.
 - [FAQ](#faq)
 
 ## Setup
-### Coming soon...
+- Download and install [Git](https://git-scm.com/downloads)
+- Coming soon...
 
 ## Features
 - Client-side routing & rendering
