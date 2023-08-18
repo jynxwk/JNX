@@ -5,21 +5,40 @@ $data = json_decode($input, true);
 $link = $data['link'];
 
 $app = "../src/app.html";
-$page = "../src/pages/" . substr_replace($link, '', 0, 1) . "/page.jnx";
+$dir = "../src/pages/" . substr_replace($link, '', 0, 1) . "/";
+$page = $dir . getConfig("standard-file");
 
+// Check if app.html exists
 if (file_exists($app)) {
+    // Check if directory exists
     if (file_exists($page)) {
         $app = file_get_contents($app);
         $page = file_get_contents($page);
         if ($page !== false) {
+            // Check if file contains <head>
             if (strpos($page, "<head>") !== false && strpos($page, "</head>") !== false) {
                 $head = getContentBetween($page, "<head>", "</head>");
-                $app = str_replace("%JNX-HEAD%", $head, $app);
                 $body = explode("</head>", $page)[1];
             } else {
-                $app = str_replace("%JNX-HEAD%", "", $app);
+                $head = "";
                 $body = $page;
             }
+
+            $style = $dir . getConfig("style-file");
+            if (file_exists($style)) {
+                $style = file_get_contents($style);
+                $style = "<style>" . $style . "</style>";
+                $head = $head . $style;
+            }
+
+            $script = $dir . getConfig("style-file");
+            if (file_exists($dir . "script.js")) {
+                $script = file_get_contents($dir . "/script.js");
+                $script = "<script>" . $script . "</script>";
+                $head = $head . $script;
+            }
+            
+            $app = str_replace("%JNX-HEAD%", $head, $app);
             $app = str_replace("%JNX-BODY%", $body, $app);
             $app = trim($app);
             echo $app;
@@ -30,6 +49,6 @@ if (file_exists($app)) {
         echo "Page not found.";
     }
 } else {
-    echo "App.html is missing.";
+    echo "app.html is missing.";
 }
 ?>
