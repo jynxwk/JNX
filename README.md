@@ -6,8 +6,9 @@ A custom backend with a router I made for creating websites.
 - [Features](#features)
 - [FAQ](#faq)
 
-## Requirements
-- [Git](https://git-scm.com/downloads)
+## Requirements 
+- Git
+- PHP
 
 ## Setup
 - Clone the repository by using `git clone https://github.com/jynxwk/backend.git`.
