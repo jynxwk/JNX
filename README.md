@@ -1,17 +1,19 @@
 # JNX Backend
 A custom backend with a router I made for creating websites.
 ## Table Of Contents
+- [Requirements](#requirements)
 - [Setup](#setup)
 - [Features](#features)
 - [FAQ](#faq)
 
+## Requirements
+- [Git](https://git-scm.com/downloads)
+
 ## Setup
-- Download and install [Git](https://git-scm.com/downloads)
-- Use `git clone https://github.com/jynxwk/backend.git` to clone the repo
-- Download XAMPP (or similar)
-- open `localhost` in your browser
+- Clone the repository by using `git clone https://github.com/jynxwk/backend.git`.
 
 ## Features
+- Dynamicity: JNX is very dynamic which means you can change almost anything in the config.json file to your liking in order to have a better programming experience. 
 - Client-side routing & rendering
 - Coming soon...
 
