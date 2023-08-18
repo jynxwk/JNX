@@ -9,7 +9,7 @@ A custom backend with a router I made for creating websites.
 ### Coming soon...
 
 ## Features
-- Custom routing system
+- Client-side routing & rendering
 - Coming soon...
 
 ## FAQ
