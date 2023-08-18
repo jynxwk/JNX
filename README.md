@@ -2,10 +2,15 @@
 A custom backend with a router I made for creating websites.
 ## Table Of Contents
 - [Setup](#setup)
+- [Features](#features)
 - [FAQ](#faq)
 
 ## Setup
-Coming soon...
+### Coming soon...
+
+## Features
+- Custom routing system
+- Coming soon...
 
 ## FAQ
-Coming soon...
+### Coming soon...
