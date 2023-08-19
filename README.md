@@ -6,6 +6,7 @@ A custom backend with a router I made for creating websites.
 - [Features](#features)
 - [Planned](#planned)
 - [Wiki](#wiki)
+- [Disclaimer](#disclaimer)
 - [FAQ](#faq)
 
 ## Requirements 
@@ -41,3 +42,5 @@ I will probably create multiple versions. This one is made with JavaScript and P
 ## FAQ
 ### This seems like regular html, css and js. What are the advantages?
 The main advantage currently is that the server reads file you redirect to, returns it to the user and replaces the current code with it, making it a single-page app and doesn't require a page reload via navigation.
+
+### Coming Soon...
