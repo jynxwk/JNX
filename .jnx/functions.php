@@ -6,8 +6,8 @@ function getContentBetween(string $content, string $start, string $end) {
 }
 
 function getConfig($i) {
-    if (file_exists("./config.json")) {
-        $config = json_decode(file_get_contents("./config.json"), true);
+    if (file_exists(".,/config.json")) {
+        $config = json_decode(file_get_contents(".,/config.json"), true);
         return $config[$i];
     }
 }
