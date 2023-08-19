@@ -5,7 +5,7 @@ $data = json_decode($input, true);
 $link = $data['link'];
 
 $app = "../src/app.html";
-$dir = "../src/pages/" . substr_replace($link, '', 0, 1) . "/";
+$dir = "../src/pages/" . $link . "/";
 $page = $dir . getConfig("standard-file");
 
 // Check if app.html exists
@@ -31,9 +31,9 @@ if (file_exists($app)) {
                 $head = $head . $style;
             }
 
-            $script = $dir . getConfig("style-file");
-            if (file_exists($dir . "script.js")) {
-                $script = file_get_contents($dir . "/script.js");
+            $script = $dir . getConfig("script-file");
+            if (file_exists($script)) {
+                $script = file_get_contents($script);
                 $script = "<script>" . $script . "</script>";
                 $head = $head . $script;
             }
