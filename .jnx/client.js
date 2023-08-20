@@ -1,10 +1,9 @@
-const head = document.querySelector("head")
-const app = document.querySelector("#app");
-
 // Listen to popstate history events and get page depending on the path.
-addEventListener("popstate", (event) => {
+addEventListener("popstate", async (event) => {
+    event.preventDefault();
     const path = event.target.location.pathname;
-    getPage(path);
+    console.log(path);
+    setPage(await loadPage(path));
 });
 
 // Prevent anchors from normally loading the page.
@@ -17,12 +16,12 @@ function setAnchors() {
             link.addEventListener("mouseover", async function(event) {
                 if (!page || cachePath != path) {
                     page = await loadPage(path);
-                    console.log(path, cachePath, page);
                 }
                 cachePath = path;
             })
             link.addEventListener("click", function(event) {
                 event.preventDefault();
+                console.log(path);
                 history.pushState({}, "", path);
                 setPage(page);
             })
@@ -31,8 +30,10 @@ function setAnchors() {
 }
 
 function setPage(page) {
-    head.innerHTML = page.head;
-    app.innerHTML = page.body;
+    let app = page.app;
+    app = app.replace("%JNX-HEAD%", page.head);
+    app = app.replace("%JNX-BODY%", page.body);
+    document.querySelector("html").innerHTML = app;
     setAnchors();
 }
 
@@ -45,7 +46,7 @@ async function loadPage(path = "/") {
 
 async function fetchPHP(file, data) {
     return await new Promise((resolve, reject) => {
-        fetch(`/.jnx/${file}`, {
+        fetch(`./.jnx/${file}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -62,7 +63,6 @@ async function fetchPHP(file, data) {
     });
 }
 
-onload = async () => {
-    let page = await loadPage(window.location.pathname)
-    setPage(page);
+onload = () => {
+    setAnchors();
 }

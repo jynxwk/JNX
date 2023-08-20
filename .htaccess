@@ -1,3 +1,3 @@
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ /.jnx/main.php [L,QSA]
+RewriteRule ^(.*)$ .jnx/main.php [L,QSA]
