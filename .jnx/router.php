@@ -27,12 +27,12 @@ function loadPage($path = "", $self = ".jnx/router.php") {
                 $script = "";
     
                 // Page Head
-                if (str_contains($page, "<head>")) {
+                if (strpos($page, "<head>") !== false ) {
                     $head = $head . getContentBetween($page, "<head>", "</head>");
                 }
                 
                 // Style
-                if (str_contains($page, "<style>")) {
+                if (strpos($page, "<style>") !== false)  {
                     $style = getContentBetween($page, "<style>", "</style>");
                     $style = "<style>".$style."</style>";
                     $head = $head . $style;
@@ -46,7 +46,7 @@ function loadPage($path = "", $self = ".jnx/router.php") {
                 }
     
                 // Script
-                if (str_contains($page, "<script>")) {
+                if (strpos($page, "<script>") !== false ) {
                     $script = getContentBetween($page, "<script>", "</script>");
                     $script = "<script>" . $script . "</script>";
                     $head = $head . $script;
