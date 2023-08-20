@@ -1,1 +1,4 @@
-<script src="/.jnx/router.js"></script>
+<?php 
+include("../src/app.html");
+?>
+<script src="/.jnx/client.js"></script>
