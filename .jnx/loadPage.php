@@ -16,7 +16,7 @@ if (file_exists($app)) {
         $page = file_get_contents($page);
         if ($page !== false) {
             // Check if file contains <head>
-            if (strpos($page, "<head>") !== false && strpos($page, "</head>") !== false) {
+            if (str_contains($page, "<head>")) {
                 $head = getContentBetween($page, "<head>", "</head>");
                 $body = explode("</head>", $page)[1];
             } else {
@@ -38,6 +38,8 @@ if (file_exists($app)) {
                 $head = $head . $script;
             }
             
+            // $body = preg_replace("<head>[^]*</head>", "", $page);
+            // echo $body;
             $app = str_replace("%JNX-HEAD%", $head, $app);
             $app = str_replace("%JNX-BODY%", $body, $app);
             $app = trim($app);
