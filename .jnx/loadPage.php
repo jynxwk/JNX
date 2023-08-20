@@ -8,6 +8,7 @@ $app = "../src/app.html";
 $dir = "../src/pages/" . $link . "/";
 $page = $dir . getConfig("standard-file");
 
+echo $page;
 // Check if app.html exists
 if (file_exists($app)) {
     // Check if directory exists
@@ -38,8 +39,8 @@ if (file_exists($app)) {
                 $head = $head . $script;
             }
             
-            // $body = preg_replace("<head>[^]*</head>", "", $page);
-            // echo $body;
+            $body = preg_replace("<head>[^]*</head>", "", $page);
+            echo $body;
             $app = str_replace("%JNX-HEAD%", $head, $app);
             $app = str_replace("%JNX-BODY%", $body, $app);
             $app = trim($app);
