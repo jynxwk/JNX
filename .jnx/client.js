@@ -20,7 +20,6 @@ function setAnchors() {
             })
             link.addEventListener("click", function(event) {
                 event.preventDefault();
-                console.log(path);
                 history.pushState({}, "", path);
                 setPage(page);
             })
@@ -56,9 +55,6 @@ async function fetchPHP(file, data) {
         .then(result => {
             resolve(result);
         })
-        .catch(error => {
-            console.error("Request failed:", error);
-        });
     });
 }
 

@@ -6,9 +6,10 @@ include("./router.php");
 $response = loadPage($_SERVER['REQUEST_URI'], ".jnx/main.php");
 $data = json_decode($response, true);
 
-$app = $data['app'];
-$app = str_replace("%JNX-HEAD%", $data['head'], $app);
-$app = str_replace("%JNX-BODY%", $data['body'], $app);
-
-echo $app;
+if ($data) {
+    $app = $data['app'];
+    $app = str_replace("%JNX-HEAD%", $data['head'], $app);
+    $app = str_replace("%JNX-BODY%", $data['body'], $app);
+    echo $app;
+}
 ?>
