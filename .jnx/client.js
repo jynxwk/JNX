@@ -2,7 +2,6 @@
 addEventListener("popstate", async (event) => {
     event.preventDefault();
     const path = event.target.location.pathname;
-    console.log(path);
     setPage(await loadPage(path));
 });
 

@@ -36,7 +36,7 @@ Here is a quick explanation of how it works since I didn't create the wiki (yet)
 To create a route, you just create a new folder in the pages directory and create a new page in there (page.php by default but can be changed in the config.json)
 
 ### Adding Styles and Scripts
-To add style and scripts to your pages, you just create a style/script file in the same directory as the page and it automatically gets added. By default those files are "style.css" & "script.js" but you can also configure the names of them in the config.json file.
+You can add styles and scripts to your pages either by adding `<style>` and `<script>` tags to your page or by creating files in same directory as your page. By default those files are "style.css" & "script.js" but you can configure the names of them in the config.json file.
 
 ## Disclaimer
 This is my first attempt at creating my own framework so please don't have too high expectations.
