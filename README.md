@@ -26,8 +26,7 @@ A PHP/JS single-page app framework with a router I made for creating websites.
 - Database implementation
 - API calls
 - *Let me know what else I should add*
-
-- Learning Node.js to add more advanced features and after that renaming this Project to "JNXPHP" or similar since I still find it neat
+- Learning Node.js to develop the necessary skills to make this project reality. I'll create a new repository for that then and rename this project because I'd still like to keep it up.
 
 ## Wiki
 Here is a quick explanation of how it works since I didn't create the wiki (yet).
@@ -47,6 +46,6 @@ I will probably create multiple versions. This one is made with JavaScript and P
 The main advantage currently is that it turns your files into a preload single-page application. When hovering, the server grabs the location the link is redirecting to and then loads and returns the data of the files in there, and replaces the current code with it when clicked.
 
 ### Why PHP?
-PHP is the first language for backend programming I learned and it's currently still the easiest for me. I tried to create this backend in Node.js and it wasn't too bad but I'm still kind of overwhelmed and I want to keep my code as original as possible but with Node, I'd probably rely on other libraries.
+PHP was the first backend language I learned and I still find it to be the easiest to try and make a project like this.
 
 ### Coming soon...
